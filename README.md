@@ -1,6 +1,8 @@
 # infinite-pomodoro-timer
 
-  A basic Pomodoro Timer lets you work for 25 minutes, then have a 5 minute break.
+  **A basic Pomodoro Timer lets you work for 25 minutes, then have a 5 minute break.**
+
+  A working demo of the project can be found via [codepen](https://codepen.io/mhijack/full/deGKEV/).
 
 # Functionality
 
