@@ -182,5 +182,3 @@ function showBtn(buttons) {
     button.style.display = 'inline-block';
   }
 }
-
-// ================== test ==================
