@@ -2,8 +2,9 @@
 // ! get timer to run (remaining time displayed in 'mm:ss' format)
 // ! let user adjust length of break & session
 // ! automatically clears setInterval when time is up
-// automatically switch between break and session
+// ! automatically switch between break and session
 // animate filling effect of a tomato
+// add tomatoes to count how many pomodoro session has passed
 
 // ================== seletors ==================
 // start timer button
@@ -57,15 +58,9 @@ function startTimer() {
     console.log('work')
     hideBtn([startBtn, resumeBtn]);
   } else if (!inSession) {
+    // start break
     timeRemaining = timeRemaining || Math.floor(parseFloat(breakLen) * 60);
     console.log('rest')
-  }
-
-  // update title
-  if (inSession) {
-    getEl('.sessionName')[0].textContent = 'work'
-  } else {
-    getEl('.sessionName')[0].textContent = 'rest'
   }
 
   // start timer and assign stop key
@@ -91,7 +86,6 @@ function startTimer() {
     startTimer();
     console.log(timeRemaining)
     console.log("automatically cleared");
-
   }, (timeRemaining + 1.5) * 1000);
 }
 
@@ -112,7 +106,7 @@ function stopTimer() {
   // show start button
   showBtn([startBtn]);
   // hide pause button and stop button
-  hideBtn([pauseBtn, stopBtn]);
+  hideBtn([pauseBtn, stopBtn, resumeBtn]);
   // empty interval and timeout key
   stopIntervalKey = null;
   stopTimeoutKey = null;
